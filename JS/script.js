@@ -171,10 +171,10 @@ loadSong(currentSongIndex);
 playButton.addEventListener('click', () => {
     if (isPlaying) {
         audio.pause();
-        playButton.src = 'Assets/Slice 8.png'; // Update to play button
+        playButton.src = 'Assets/slice 8.png'; // Update to play button
     } else {
         audio.play();
-        playButton.src = 'Assets/Slice 3.png'; // Update to pause button
+        playButton.src = 'Assets/slice 3.png'; // Update to pause button
     }
     isPlaying = !isPlaying;
 });
