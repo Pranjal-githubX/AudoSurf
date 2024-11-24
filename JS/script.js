@@ -1,4 +1,5 @@
 // Get the elements
+console.log("loaded")
 const playButton = document.querySelector('.playback-btns img:nth-child(3)');  // Play/Pause button
 const skipBackButton = document.querySelector('.playback-btns img:nth-child(2)'); // Skip Back (Previous Song)
 const skipForwardButton = document.querySelector('.playback-btns img:nth-child(4)'); // Skip Forward (Next Song)
@@ -32,7 +33,7 @@ const playlist = [
         name: 'Afreen Afreen',
         artist: 'Rahat F | Momina M',
         thumbnail: './More/Afreen.jpeg',
-        audioPath: 'https://drive.google.com/uc?export=download&id=1EsIorasX7kdfXUG9o2j_SlJ08LtH5JND'
+        audioPath: 'Audio/Afreen.mp3'
     },
     {
         name: 'Bela Ciao',
@@ -43,7 +44,7 @@ const playlist = [
         name: 'Fix You',
         artist: 'Coldplay',
         thumbnail: './More/Fix You.webp',
-        audioPath: 'Audio/FIx You.mp3'
+        audioPath: 'Audio/Fix You.mp3'
     }, {
         name: 'Beetein Lamhein',
         artist: 'KK | Mithoon | Sayeed Quadri',
@@ -57,12 +58,12 @@ const playlist = [
     }, {
         name: 'Haan Tu Hain',
         artist: 'Pritam | KK',
-        thumbnail: './More/kk.jpg',
+        thumbnail: './More/KK.jpg',
         audioPath: 'Audio/HTH.mp3'
     }, {
         name: 'I AM IN LOVE',
         artist: 'Pritam | KK | Dominique | Nilesh Mishra',
-        thumbnail: './More/mumbai.jpeg',
+        thumbnail: './More/Mumbai.jpeg',
         audioPath: 'Audio/IAIL.mp3'
     }, {
         name: 'Khuda Jaane',
@@ -98,7 +99,7 @@ const playlist = [
         name: 'O Meri Jaan',
         artist: 'KK',
         thumbnail: './More/KK.jpg',
-        audioPath: 'Audio/OMJ.mp3'
+        audioPath: 'Audio/omj.mp3'
     }, {
         name: 'Parda Parda',
         artist: 'Pritam | Sunidhi Chauhan | Rana Mazumder',
@@ -107,7 +108,7 @@ const playlist = [
     }, {
         name: 'Pee Loon',
         artist: 'Pritam Irshad Kamil | Mohit Chauhan',
-        thumbnail: './More/mumbai.jpeg',
+        thumbnail: './More/Mumbai.jpeg',
         audioPath: 'Audio/PL.mp3'
     }, {
         name: 'Sajde Kiye Hain Lakho',
@@ -122,7 +123,7 @@ const playlist = [
     }, {
         name: 'Tum Jo Aye',
         artist: 'Pritam | Rahat Fateh Ali Khan | Tulsi Kumar',
-        thumbnail: './More/mumbai.jpeg',
+        thumbnail: './More/Mumbai.jpeg',
         audioPath: 'Audio/TJA.mp3'
     }, {
         name: 'Tu Jo Mila',
@@ -143,7 +144,7 @@ const playlist = [
         name: 'Zara Sa',
         artist: 'Pritam | KK',
         thumbnail: './More/Zara sa.jpeg',
-        audioPath: 'Audio/ZA.mp3'
+        audioPath: 'Audio/ZS.mp3'
     }, {
         name: 'O Meri Jaan',
         artist: 'Pritam | KK',
