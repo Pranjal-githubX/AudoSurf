@@ -103,7 +103,7 @@ const playlist = [
     }, {
         name: 'Parda Parda',
         artist: 'Pritam | Sunidhi Chauhan | Rana Mazumder',
-        thumbnail: './More/mumbai.jpeg',
+        thumbnail: './More/Mumbai.jpeg',
         audioPath: 'Audio/parda.mp3'
     }, {
         name: 'Pee Loon',
