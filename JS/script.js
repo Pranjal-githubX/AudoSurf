@@ -190,7 +190,7 @@ let currentSongIndex = 0;
 // Load the first song
 loadSong(currentSongIndex);
 
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
 // Play/Pause functionality
 playButton.addEventListener('click', () => {
     if (isPlaying) {
@@ -206,21 +206,21 @@ playButton.addEventListener('click', () => {
 // Skip forward functionality (Next song)
 skipForwardButton.addEventListener('click', () => {
     nextSong();
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 });
 
 // Skip back functionality (Previous song)
 skipBackButton.addEventListener('click', () => {
     prevSong();
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 });
 
 // Shuffle functionality
 shuffleButton.addEventListener('click', () => {
     shufflePlaylist()
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 });
 
@@ -231,7 +231,7 @@ repeatButton.addEventListener('click', () => {
     audio.currentTime = 0; // Reset the audio's playback time to 0
     currentTimeSpan.textContent = '0:00'; // Update the current time display to 0:00
     progressBar.style.width = '0%'; // Reset the progress bar to 0%
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
 
 
 });
@@ -247,7 +247,7 @@ audio.addEventListener('timeupdate', () => {
     // Update progress bar width
     const progress = (currentTime / duration) * 100;
     progressBar.style.width = `${progress}%`;
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 });
 
@@ -256,7 +256,7 @@ audio.addEventListener('loadedmetadata', () => {
     const totalDuration = audio.duration;
     durationTimeSpan.textContent = formatTime(totalDuration); // Update total duration span
     totalDurationDiv.textContent = `${formatTime(totalDuration)}`; // Update .hh div
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 });
 
@@ -265,7 +265,7 @@ function formatTime(time) {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 }
 
@@ -289,7 +289,7 @@ function loadSong(index) {
     audio.play();
     isPlaying = true;
     playButton.src = 'Assets/slice 8.png'; // Update button to pause
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 }
 
@@ -301,7 +301,7 @@ function nextSong() {
         currentSongIndex = (currentSongIndex + 1) % playlist.length;
     }
     loadSong(currentSongIndex);
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 }
 
@@ -313,7 +313,7 @@ function prevSong() {
         currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
     }
     loadSong(currentSongIndex);
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 }
 
@@ -324,7 +324,7 @@ audio.addEventListener('ended', () => {
     } else {
         nextSong(); // Play the next song in the playlist
     }
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 });
 
@@ -335,6 +335,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js').then(() => {
         console.log('Service Worker Registered');
     });
-document.title = playlist[currentSongIndex].name + " | " document.title
+document.title = playlist[currentSongIndex].name + " | " + document.title; document.title
     
 }
