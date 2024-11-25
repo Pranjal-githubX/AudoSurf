@@ -1,5 +1,4 @@
 // Get the elements
-console.log("loaded")
 const playButton = document.querySelector('.playback-btns img:nth-child(3)');  // Play/Pause button
 const skipBackButton = document.querySelector('.playback-btns img:nth-child(2)'); // Skip Back (Previous Song)
 const skipForwardButton = document.querySelector('.playback-btns img:nth-child(4)'); // Skip Forward (Next Song)
@@ -103,7 +102,7 @@ const playlist = [
     }, {
         name: 'Parda Parda',
         artist: 'Pritam | Sunidhi Chauhan | Rana Mazumder',
-        thumbnail: './More/Mumbai.jpeg',
+        thumbnail: './More/mumbai.jpeg',
         audioPath: 'Audio/parda.mp3'
     }, {
         name: 'Pee Loon',
@@ -150,7 +149,32 @@ const playlist = [
         artist: 'Pritam | KK',
         thumbnail: './More/DI.jpg',
         audioPath: 'Audio/Tum Mile OMJ.mp3'
-    },
+    }, {
+        name: 'Aankhon Mein Teri',
+        artist: 'Pritam | KK',
+        thumbnail: './More/KK.jpg',
+        audioPath: 'Audio/AMT.mp3'
+    }, {
+        name: 'Dil Kyun Yeh Mera',
+        artist: 'Pritam | KK',
+        thumbnail: './More/KK.jpg',
+        audioPath: 'Audio/DK.mp3'
+    }, {
+        name: 'KK Mashup',
+        artist: 'Pritam | KK',
+        thumbnail: './More/KK.jpg',
+        audioPath: 'Audio/KK M.mp3'
+    }, {
+        name: 'Soniye (Heartless)',
+        artist: 'Pritam | KK',
+        thumbnail: './More/KK.jpg',
+        audioPath: 'Audio/soniye.mp3'
+    }, {
+        name: 'Yeh Tune Kya Kiya',
+        artist: 'Javed B | Rajat Arora',
+        thumbnail: './More/KK.jpg',
+        audioPath: 'Audio/YTKK.mp3'
+    }
 ];
 
 function shufflePlaylist() {
