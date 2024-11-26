@@ -24,7 +24,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 7vw;
+        gap: 4.8vw;
     }
 
 
@@ -72,7 +72,7 @@
         align-items: center;
         justify-content: center;
         /* background-color: red; */
-        gap: 48px;
+        gap: 38px;
     }
 
     .album-details img {
