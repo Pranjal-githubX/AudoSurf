@@ -183,7 +183,7 @@ const playlist = [
         name: 'Apna Bana Le',
         artist: 'Sachin-Jigar | Arijit S | Amitabh B',
         thumbnail: './More/ABL.jpeg',
-        audioPath: 'Audio/ABL.mp3'
+        audioPath: 'Audio/APL.mp3'
     }, {
         name: 'Mere Yaara',
         artist: 'Arijit S | Neeti M | Rashmi V',
