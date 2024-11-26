@@ -76,6 +76,7 @@
     }
 
     .album-details img {
+       max-width: 420px;
         width: 84vw;
         height: 84vw;
         object-fit: cover;
