@@ -102,7 +102,7 @@ const playlist = [
     }, {
         name: 'Parda Parda',
         artist: 'Pritam | Sunidhi Chauhan | Rana Mazumder',
-        thumbnail: './More/Mumbai.jpeg',
+        thumbnail: './More/mumbai.jpeg',
         audioPath: 'Audio/parda.mp3'
     }, {
         name: 'Pee Loon',
@@ -172,8 +172,33 @@ const playlist = [
     }, {
         name: 'Yeh Tune Kya Kiya',
         artist: 'Javed B | Rajat Arora',
-        thumbnail: './More/KK.jpg',
+        thumbnail: './More/YTKK.jpeg',
         audioPath: 'Audio/YTKK.mp3'
+    }, {
+        name: 'Ve Kamleya',
+        artist: 'Pritam | Arijit Singh | Shreya Ghoshal | Amitabh B | ',
+        thumbnail: './More/VK.jpeg',
+        audioPath: 'Audio/VK.mp3'
+    }, {
+        name: 'Apna Bana Le',
+        artist: 'Sachin-Jigar | Arijit S | Amitabh B',
+        thumbnail: './More/ABL.jpeg',
+        audioPath: 'Audio/ABL.mp3'
+    }, {
+        name: 'Mere Yaara',
+        artist: 'Arijit S | Neeti M | Rashmi V',
+        thumbnail: './More/MY.jpeg',
+        audioPath: 'Audio/MY.mp3'
+    }, {
+        name: 'Tere Sang Yaara',
+        artist: 'Atif Aslam | Manoj M',
+        thumbnail: './More/TSY.jpeg',
+        audioPath: 'Audio/TSY.mp3'
+    }, {
+        name: 'Pehli Nazar Mein',
+        artist: 'Pritam | Atif Aslam',
+        thumbnail: './More/PNM.jpeg',
+        audioPath: 'Audio/PNM.mp3'
     }
 ];
 
@@ -183,6 +208,7 @@ function shufflePlaylist() {
         [playlist[i], playlist[randomIndex]] = [playlist[randomIndex], playlist[i]];
     }
 }
+
 // Load the first song
 shufflePlaylist()
 let currentSongIndex = 0;
@@ -190,7 +216,6 @@ let currentSongIndex = 0;
 // Load the first song
 loadSong(currentSongIndex);
 
- 
 // Play/Pause functionality
 playButton.addEventListener('click', () => {
     if (isPlaying) {
@@ -206,22 +231,16 @@ playButton.addEventListener('click', () => {
 // Skip forward functionality (Next song)
 skipForwardButton.addEventListener('click', () => {
     nextSong();
- 
-    
 });
 
 // Skip back functionality (Previous song)
 skipBackButton.addEventListener('click', () => {
     prevSong();
- 
-    
 });
 
 // Shuffle functionality
 shuffleButton.addEventListener('click', () => {
     shufflePlaylist()
- 
-    
 });
 
 // Repeat functionality
@@ -231,7 +250,6 @@ repeatButton.addEventListener('click', () => {
     audio.currentTime = 0; // Reset the audio's playback time to 0
     currentTimeSpan.textContent = '0:00'; // Update the current time display to 0:00
     progressBar.style.width = '0%'; // Reset the progress bar to 0%
- 
 
 
 });
@@ -247,8 +265,6 @@ audio.addEventListener('timeupdate', () => {
     // Update progress bar width
     const progress = (currentTime / duration) * 100;
     progressBar.style.width = `${progress}%`;
- 
-    
 });
 
 // Update the total duration when the song's metadata is loaded
@@ -256,8 +272,6 @@ audio.addEventListener('loadedmetadata', () => {
     const totalDuration = audio.duration;
     durationTimeSpan.textContent = formatTime(totalDuration); // Update total duration span
     totalDurationDiv.textContent = `${formatTime(totalDuration)}`; // Update .hh div
- 
-    
 });
 
 // Format time (helper function for displaying time in MM:SS format)
@@ -265,8 +279,6 @@ function formatTime(time) {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
- 
-    
 }
 
 // Load the song details (name, artist, thumbnail)
@@ -289,8 +301,6 @@ function loadSong(index) {
     audio.play();
     isPlaying = true;
     playButton.src = 'Assets/slice 8.png'; // Update button to pause
- 
-    
 }
 
 // Play next song
@@ -301,8 +311,6 @@ function nextSong() {
         currentSongIndex = (currentSongIndex + 1) % playlist.length;
     }
     loadSong(currentSongIndex);
- 
-    
 }
 
 // Play previous song
@@ -313,8 +321,6 @@ function prevSong() {
         currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
     }
     loadSong(currentSongIndex);
- 
-    
 }
 
 // Audio ended event (play next song)
@@ -324,8 +330,6 @@ audio.addEventListener('ended', () => {
     } else {
         nextSong(); // Play the next song in the playlist
     }
- 
-    
 });
 
 audio.pause()
@@ -335,6 +339,4 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js').then(() => {
         console.log('Service Worker Registered');
     });
- 
-    
 }
