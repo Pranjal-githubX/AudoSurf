@@ -24,9 +24,6 @@ let isPlaying = false;
 let isShuffle = false;
 let isRepeating = false;
 
-// Playlist with song objects containing name, artist, thumbnail, and audio path
-//https://drive.google.com/file/d/1EsIorasX7kdfXUG9o2j_SlJ08LtH5JND/view?usp=sharing
-
 const playlist = [
     {
         name: 'Afreen Afreen',
@@ -204,9 +201,17 @@ const playlist = [
 
 function shufflePlaylist() {
     for (let i = playlist.length - 1; i > 0; i--) {
-        const randomIndex = Math.floor(Math.random() * (i + 1));
-        [playlist[i], playlist[randomIndex]] = [playlist[randomIndex], playlist[i]];
+        const j = Math.floor(Math.random() * (i + 1));
+        [playlist[i], playlist[j]] = [playlist[j], playlist[i]]; // Swap elements
     }
+    updatePlaylistUI(); // Update the UI after shuffling
+}
+
+// Function to clear and regenerate the playlist in the UI
+function updatePlaylistUI() {
+    const section = document.querySelector("section");
+    section.innerHTML = ""; // Clear the existing playlist
+    generatePlaylist(); // Regenerate the playlist with the updated order
 }
 
 // Load the first song
@@ -340,3 +345,81 @@ if ('serviceWorker' in navigator) {
         console.log('Service Worker Registered');
     });
 }
+function generatePlaylist() {
+    for (let i = 0; i < playlist.length; i++) {
+        const container = document.createElement("div");
+        container.classList.add("container");
+
+        const h1 = document.createElement("h1")
+        h1.innerText = i + 1
+        h1.classList.add("h")
+        container.appendChild(h1)
+
+        const img = document.createElement("img")
+        img.src = playlist[i].thumbnail
+        img.classList.add("tnail")
+        container.append(img)
+
+        const lft = document.createElement("div");
+        lft.classList.add("lft");
+
+        const songName = document.createElement("h4");
+        songName.setAttribute("id", "song-name");
+        songName.innerText = playlist[i].name;
+
+        const songArtist = document.createElement("h5");
+        songArtist.setAttribute("id", "song-artist");
+        songArtist.innerText = playlist[i].artist;
+
+        lft.appendChild(songName);
+        lft.appendChild(songArtist);
+
+        container.appendChild(lft);
+
+        // Add play icon
+        const playIcon = document.createElement("i");
+        playIcon.classList.add("ri-play-circle-line");
+        playIcon.setAttribute("data-index", i); // Use a data attribute to store the index
+        container.appendChild(playIcon);
+
+        // Append to the section
+        document.querySelector("section").append(container);
+    }
+
+    // Add click event listeners for all play icons
+    document.querySelectorAll(".ri-play-circle-line").forEach((icon) => {
+        icon.addEventListener("click", () => {
+            // Reset styling for all songs
+            document.querySelectorAll(".container").forEach((container) => {
+                const songNameElement = container.querySelector("h4#song-name");
+                songNameElement.style.textDecoration = "none";
+                songNameElement.style.fontWeight = "400";
+                songNameElement.style.color = "#fff";
+            });
+
+            // Get the index and selected song
+            const index = icon.getAttribute("data-index"); // Get the index from the data attribute
+            const selectedSong = playlist[index]; // Retrieve the song object from the playlist
+
+            audio.pause(); // Pause current audio if playing
+            audio.src = selectedSong.audioPath; // Update audio source to the selected song
+            audio.play(); // Play the new song
+
+            // Update UI elements
+            songThumbnailElement.src = "./" + selectedSong.thumbnail;
+            songNameElement.innerText = selectedSong.name;
+            songArtistElement.innerText = selectedSong.artist;
+
+            currentSongIndex = index; // Update the current song index
+
+            // Apply styling to the selected song
+            const selectedContainer = icon.parentElement;
+            const selectedSongNameElement = selectedContainer.querySelector("h4#song-name");
+            selectedSongNameElement.style.textDecoration = "underline";
+            selectedSongNameElement.style.fontWeight = "600";
+            selectedSongNameElement.style.color = "#70ffe1";
+        });
+    });
+}
+
+generatePlaylist();
