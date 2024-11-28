@@ -346,6 +346,10 @@ if ('serviceWorker' in navigator) {
     });
 }
 function generatePlaylist() {
+    let y = document.createElement("h1")
+    y.style.fontSize = "20px"
+    y.innerText = "Playlist: "
+    document.querySelector("section").append(y)
     for (let i = 0; i < playlist.length; i++) {
         const container = document.createElement("div");
         container.classList.add("container");
