@@ -346,6 +346,7 @@ if ('serviceWorker' in navigator) {
     });
 }
 function generatePlaylist() {
+    document.querySelector("section").innerHTML = ""
     let y = document.createElement("h1")
     y.style.fontSize = "20px"
     y.innerText = "Playlist:"
