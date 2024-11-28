@@ -348,7 +348,7 @@ if ('serviceWorker' in navigator) {
 function generatePlaylist() {
     let y = document.createElement("h1")
     y.style.fontSize = "20px"
-    y.innerText = "Playlist: "
+    y.innerText = "Playlist:"
     document.querySelector("section").append(y)
     for (let i = 0; i < playlist.length; i++) {
         const container = document.createElement("div");
@@ -394,6 +394,7 @@ function generatePlaylist() {
     document.querySelectorAll(".ri-play-circle-line").forEach((icon) => {
         icon.addEventListener("click", () => {
             // Reset styling for all songs
+            
             document.querySelectorAll(".container").forEach((container) => {
                 const songNameElement = container.querySelector("h4#song-name");
                 songNameElement.style.textDecoration = "none";
@@ -422,6 +423,8 @@ function generatePlaylist() {
             selectedSongNameElement.style.textDecoration = "underline";
             selectedSongNameElement.style.fontWeight = "600";
             selectedSongNameElement.style.color = "#70ffe1";
+                        document.querySelector(".cuname").innerText = selectedSong.name
+
         });
     });
 }
