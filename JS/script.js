@@ -133,7 +133,7 @@ const playlist = [
         audioPath: 'Audio/TSH.mp3'
     }, {
         name: 'Zindagi Do Pal Ki',
-        artist: 'Rajesh Roshan | Hrithik Roshan',
+        artist: 'Rajesh Roshan | KK',
         thumbnail: './More/Woh Lamhe.jpeg',
         audioPath: 'Audio/ZDPK.mp3'
     }, {
