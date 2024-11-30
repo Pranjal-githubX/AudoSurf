@@ -25,7 +25,7 @@
 
 <body>
     <div class="overlay">
-        <h2 id="sign">Pranjal Tomar</h2>
+        <h2 class="sign">Pranjal &ThickSpace; Tomar</h2>
     </div>
     <main>
 
@@ -71,7 +71,7 @@
     </section>
     <script src='JS/script.js'> </script>
     <script>
-        let signature = document.querySelector("h2#sign");
+        let signature = document.querySelector("h2.sign");
         let txt = signature.innerText;
         let len = txt.length;
 
@@ -83,16 +83,17 @@
         }
         signature.innerHTML = clutter; // Update innerHTML once after the loop
 
-        gsap.from("h2#sign span", {
+        gsap.from("h2.sign span", {
             opacity: 0,
-            stagger: 0.1
+            y: 25,
+            stagger: 0.1,
         })
 
         setTimeout(() => {
             gsap.to("main, section", { visibility: 'visible' })
             document.querySelector(".overlay").style.display = "none"
-            
-        }, 2100)
+
+        }, 0)
 
     </script>
 </body>
