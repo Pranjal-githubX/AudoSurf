@@ -218,6 +218,12 @@ section {
     margin-bottom: 30px;
 }
 
+section .container #song-name,
+section .container #song-artist {
+    position: relative;
+    right: 12vw;
+}
+
 .hf h1 {
     font-size: 20px;
 }
@@ -246,16 +252,23 @@ section .container h1 {
     left: 20vw;
 }
 
-.container i {
+.container i.ri-play-circle-line {
     font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     color: #ccc;
-    position: relative;
+    position: absolute;
+    right: 0;
     z-index: 5;
 }
+
+.container .more {
+    position: absolute;
+    right: 8vw;
+}
+
 
 h1.h {
     position: absolute;
@@ -263,14 +276,16 @@ h1.h {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    right: 20px;
 }
 
 .tnail {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     object-fit: cover;
     object-position: center;
-    position: relative;
+    position: absolute;
     left: 7vw;
     border-radius: 20%;
 }
@@ -288,9 +303,10 @@ h1.h {
     color: white;
 }
 
+
 main,
 section {
- visibility: hidden;
+    visibility: hidden;
 }
 
 
@@ -304,9 +320,11 @@ section {
     color: white;
 }
 
-.overlay h2#sign span {
+.overlay h2.sign span {
     font-family: "Cedarville Cursive", serif;
-    font-size: 3vw;
+    font-size: 13vw;
     letter-spacing: 1px;
     font-weight: 400;
+    display: inline-block;
+    opacity: 1;
 }
