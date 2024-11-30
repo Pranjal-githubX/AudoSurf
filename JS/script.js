@@ -346,6 +346,7 @@ if ('serviceWorker' in navigator) {
         console.log('Service Worker Registered');
     });
 }
+
 function generatePlaylist() {
     document.querySelector("section").innerHTML = ""
     let y = document.createElement("h1")
@@ -390,6 +391,16 @@ function generatePlaylist() {
         playIcon.setAttribute("data-index", i); // Use a data attribute to store the index
         container.appendChild(playIcon);
 
+        const moreIcon = document.createElement("i")
+        moreIcon.classList.add("ri-play-list-add-fill", "more")
+        moreIcon.setAttribute("data-index", i)
+        container.appendChild(moreIcon)
+
+
+
+
+
+
         // Append to the section
         document.querySelector("section").append(container);
     }
@@ -429,6 +440,49 @@ function generatePlaylist() {
             document.querySelector(".cuname").innerText = selectedSong.name
         });
     });
+
+
 }
 
-generatePlaylist();
+// Songs playlist as defined earlier
+
+
+// Function to rearrange the playlist
+function moveSongToFirst(index) {
+    // Check if index is valid
+    if (index < 0 || index >= playlist.length) {
+        console.error("Invalid index");
+        return;
+    }
+
+    // Extract the selected song
+    const selectedSong = playlist.splice(index, 1)[0];
+
+    // Add the selected song to the beginning of the array
+    playlist.unshift(selectedSong);
+
+    console.log("Updated playlist:");
+}
+
+// Example usage
+// Assuming the "more" icon of the second song (index 1) is clicked
+
+
+// generatePlaylist();
+var temp = ""
+
+function addMoreButtonListeners() {
+    document.querySelectorAll(".more").forEach(e => {
+        e.addEventListener('click', () => {
+            const num = parseInt(e.getAttribute("data-index"));
+            [playlist[0], playlist[num]] = [playlist[num], playlist[0]];
+            generatePlaylist();
+
+            // Re-attach event listeners after DOM update
+            addMoreButtonListeners();
+        });
+    });
+}
+
+generatePlaylist(); // Initial generation
+addMoreButtonListeners();
