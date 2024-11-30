@@ -17,7 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(0 56 69)
+    background-color: rgb(68, 1, 1);
     min-height: 200dvh;
 }
 
