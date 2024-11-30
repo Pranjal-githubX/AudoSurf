@@ -103,7 +103,7 @@ const playlist = [
         audioPath: 'Audio/parda.mp3'
     }, {
         name: 'Pee Loon',
-        artist: 'Pritam Irshad Kamil | Mohit Chauhan',
+        artist: 'Pritam | Irshad Kamil | Mohit Chauhan',
         thumbnail: './More/Mumbai.jpeg',
         audioPath: 'Audio/PL.mp3'
     }, {
