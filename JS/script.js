@@ -5,6 +5,7 @@ const skipForwardButton = document.querySelector('.playback-btns img:nth-child(4
 const shuffleButton = document.querySelector('.playback-btns img:nth-child(1)'); // Shuffle button
 const repeatButton = document.querySelector('.playback-btns img:nth-child(5)'); // Repeat button
 
+
 const progressBar = document.querySelector('.dur-bar'); // Progress bar
 const currentTimeSpan = document.querySelector('.durations span:first-child'); // Current time
 const durationTimeSpan = document.querySelector('.durations span:last-child'); // Total duration time
@@ -103,7 +104,7 @@ const playlist = [
         audioPath: 'Audio/parda.mp3'
     }, {
         name: 'Pee Loon',
-        artist: 'Pritam | Irshad Kamil | Mohit Chauhan',
+        artist: 'Pritam Irshad Kamil | Mohit Chauhan',
         thumbnail: './More/Mumbai.jpeg',
         audioPath: 'Audio/PL.mp3'
     }, {
@@ -133,7 +134,7 @@ const playlist = [
         audioPath: 'Audio/TSH.mp3'
     }, {
         name: 'Zindagi Do Pal Ki',
-        artist: 'Rajesh Roshan | KK',
+        artist: 'Rajesh Roshan | Hrithik Roshan',
         thumbnail: './More/Woh Lamhe.jpeg',
         audioPath: 'Audio/ZDPK.mp3'
     }, {
@@ -349,15 +350,17 @@ function generatePlaylist() {
     document.querySelector("section").innerHTML = ""
     let y = document.createElement("h1")
     y.style.fontSize = "20px"
-    y.innerText = "Playlist:"
+    y.innerText = "Playlist: "
     document.querySelector("section").append(y)
     for (let i = 0; i < playlist.length; i++) {
         const container = document.createElement("div");
         container.classList.add("container");
 
         const h1 = document.createElement("h1")
-        h1.innerText = i + 1
+        h1.innerHTML = (i + 1)// + '<i class="ri-heart-fill"></i>'
         h1.classList.add("h")
+
+
         container.appendChild(h1)
 
         const img = document.createElement("img")
@@ -395,7 +398,6 @@ function generatePlaylist() {
     document.querySelectorAll(".ri-play-circle-line").forEach((icon) => {
         icon.addEventListener("click", () => {
             // Reset styling for all songs
-            
             document.querySelectorAll(".container").forEach((container) => {
                 const songNameElement = container.querySelector("h4#song-name");
                 songNameElement.style.textDecoration = "none";
@@ -424,8 +426,7 @@ function generatePlaylist() {
             selectedSongNameElement.style.textDecoration = "underline";
             selectedSongNameElement.style.fontWeight = "600";
             selectedSongNameElement.style.color = "#70ffe1";
-                        document.querySelector(".cuname").innerText = selectedSong.name
-
+            document.querySelector(".cuname").innerText = selectedSong.name
         });
     });
 }
