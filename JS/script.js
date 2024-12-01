@@ -790,9 +790,7 @@ function moveSongToFirst(index) {
 
 
 // generatePlaylist();
-var temp = ""
-let alertHeading = document.querySelector("main .alert h2")
-alertHeading.innerHTML = ""
+
 function addMoreButtonListeners() {
     document.querySelectorAll(".more").forEach(e => {
         e.addEventListener('click', () => {
@@ -829,6 +827,4 @@ generatePlaylist(); // Initial generation
 addMoreButtonListeners();
 
 
-generatePlaylist(); // Initial generation
-addMoreButtonListeners();
 
