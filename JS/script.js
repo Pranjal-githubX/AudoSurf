@@ -803,7 +803,7 @@ function addMoreButtonListeners() {
             if (songIndex !== -1) {
                 // If the song exists in favoriteSongs, remove it
                 favoriteSongs.splice(songIndex, 1);
-                alert(`Removed: ${song.name}`);
+                alert(`Removed : ${song.name}`);
                 // console.log(`Removed: ${song.name}`);
 
 
@@ -811,7 +811,7 @@ function addMoreButtonListeners() {
                 // If the song doesn't exist, add it to favoriteSongs
                 favoriteSongs.push(song);
 
-                alert(`Added: ${song.name}`);
+                alert(`Added : ${song.name}`);
                 // console.log(`Added: ${song.name}`);
                 let num = e.getAttribute("data-index");
 
