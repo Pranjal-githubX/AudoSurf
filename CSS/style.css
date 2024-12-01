@@ -47,6 +47,8 @@ main>* {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 150;
 }
 
 .topbar>h3 {
@@ -266,7 +268,8 @@ section .container h1 {
 
 .container .more {
     position: absolute;
-    right: 8vw;
+    right: 11vw;
+    font-size: 23px;
 }
 
 
