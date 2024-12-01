@@ -333,7 +333,7 @@ function favSongs() {
             isCurrFav = !isCurrFav
             generatePlaylist()
         }
-        else if(isCurrFav) {
+        else if (isCurrFav) {
             playlist = [
                 {
                     name: 'Afreen Afreen',
@@ -791,24 +791,32 @@ function moveSongToFirst(index) {
 
 // generatePlaylist();
 var temp = ""
+let alertHeading = document.querySelector("main .alert h2")
+alertHeading.innerHTML = ""
 function addMoreButtonListeners() {
     document.querySelectorAll(".more").forEach(e => {
         e.addEventListener('click', () => {
             const num = parseInt(e.getAttribute("data-index"));
-
-            // Check if the song is already in the favoriteSongs array
             const song = playlist[num];
             const songIndex = favoriteSongs.indexOf(song);
 
             if (songIndex !== -1) {
                 // If the song exists in favoriteSongs, remove it
                 favoriteSongs.splice(songIndex, 1);
+                alert(`Removed: ${song.name}`);
+                // console.log(`Removed: ${song.name}`);
+
+
             } else {
                 // If the song doesn't exist, add it to favoriteSongs
                 favoriteSongs.push(song);
+
+                alert(`Added: ${song.name}`);
+                // console.log(`Added: ${song.name}`);
+                let num = e.getAttribute("data-index");
+
             }
 
-            console.log(favoriteSongs);
             generatePlaylist();
 
             // Re-attach event listeners after DOM update
@@ -816,6 +824,10 @@ function addMoreButtonListeners() {
         });
     });
 }
+
+generatePlaylist(); // Initial generation
+addMoreButtonListeners();
+
 
 generatePlaylist(); // Initial generation
 addMoreButtonListeners();
