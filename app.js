@@ -318,8 +318,9 @@ let playlist = [
 
 let favoriteSongs = []
 
-function favSongs() {
     const heartIcon = document.querySelector("img.heart");
+function favSongs() {
+    
     if (!heartIcon) {
         console.error("Heart icon not found!");
         return;
@@ -516,6 +517,7 @@ function favSongs() {
         generatePlaylist()
     });
     shufflePlaylist()
+addMoreButtonListeners();
 }
 
 favSongs()
@@ -801,13 +803,14 @@ function addMoreButtonListeners() {
                 // If the song exists in favoriteSongs, remove it
                 favoriteSongs.splice(songIndex, 1);
                 alert(`Removed: ${song.name}`);
+                e.style.color = "white"
                 // console.log(`Removed: ${song.name}`);
 
 
             } else {
                 // If the song doesn't exist, add it to favoriteSongs
                 favoriteSongs.push(song);
-
+                e.style.color = "lightseagreen"
                 alert(`Added: ${song.name}`);
                 // console.log(`Added: ${song.name}`);
                 let num = e.getAttribute("data-index");
