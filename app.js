@@ -791,7 +791,6 @@ function moveSongToFirst(index) {
 // Assuming the "more" icon of the second song (index 1) is clicked
 
 
-
 function addMoreButtonListeners() {
     document.querySelectorAll(".more").forEach(e => {
         e.addEventListener('click', () => {
@@ -802,33 +801,38 @@ function addMoreButtonListeners() {
             if (songIndex !== -1) {
                 // If the song exists in favoriteSongs, remove it
                 favoriteSongs.splice(songIndex, 1);
-                alert(`Removed: ${song.name}`);
-                e.style.color = "white"
-                // console.log(`Removed: ${song.name}`);
-
-
+                console.log(`Removed: ${song}`);
+                e.style.color = "white"; // Set icon color to white
             } else {
                 // If the song doesn't exist, add it to favoriteSongs
                 favoriteSongs.push(song);
-                e.style.color = "lightseagreen"
-                alert(`Added: ${song.name}`);
-                // console.log(`Added: ${song.name}`);
-                let num = e.getAttribute("data-index");
-
+                console.log(`Added: ${song}`);
+                e.style.color = "lightseagreen"; // Set icon color to red
             }
 
-            generatePlaylist();
-
-            // Re-attach event listeners after DOM update
-            addMoreButtonListeners();
+            generatePlaylist(); // Regenerate the playlist (if required)
+            addMoreButtonListeners(); // Reattach event listeners
+            addHeartButtonListeners(); // Reattach heart listeners
         });
     });
 }
 
-generatePlaylist(); // Initial generation
-addMoreButtonListeners();
+function addHeartButtonListeners() {
+    document.querySelectorAll(".heart").forEach(e => {
+        e.addEventListener('click', () => {
+            const num = parseInt(e.getAttribute("data-index"));
+            const song = playlist[num];
 
+            // Perform heart icon logic here
+            console.log(`Heart icon clicked for: ${song}`);
+            e.style.color = e.style.color === "red" ? "white" : "red";
+        });
+    });
+}
 
-generatePlaylist(); // Initial generation
+// Initial setup
+generatePlaylist(); 
 addMoreButtonListeners();
+addHeartButtonListeners();
+
 
