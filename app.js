@@ -319,6 +319,7 @@ let playlist = [
 let favoriteSongs = []
 
     const heartIcon = document.querySelector("img.heart");
+
 function favSongs() {
     
     if (!heartIcon) {
@@ -827,8 +828,7 @@ function addMoreButtonListeners() {
 
 generatePlaylist(); // Initial generation
 addMoreButtonListeners();
-
-document.querySelectorAll(".more").forEach(e => {
+setInterval(()=>{document.querySelectorAll(".more").forEach(e => {
         e.addEventListener('click', () => {
             const num = parseInt(e.getAttribute("data-index"));
             const song = playlist[num];
@@ -857,6 +857,7 @@ document.querySelectorAll(".more").forEach(e => {
             // Re-attach event listeners after DOM update
             addMoreButtonListeners();
         });
-    });
+    });}, 1000)
+
 generatePlaylist(); // Initial generation
 addMoreButtonListeners();
