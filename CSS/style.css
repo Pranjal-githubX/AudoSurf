@@ -270,6 +270,8 @@ section .container h1 {
     position: absolute;
     right: 13vw;
     font-size: 19px;
+    color: lightseagreen;
+    
 }
 
 
