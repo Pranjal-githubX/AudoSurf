@@ -318,10 +318,8 @@ let playlist = [
 
 let favoriteSongs = []
 
-    const heartIcon = document.querySelector("img.heart");
-
 function favSongs() {
-    
+    const heartIcon = document.querySelector("img.heart");
     if (!heartIcon) {
         console.error("Heart icon not found!");
         return;
@@ -517,8 +515,8 @@ function favSongs() {
         console.log(`Playlist length: ${playlist.length}`);
         generatePlaylist()
     });
-    shufflePlaylist()
-addMoreButtonListeners();
+    // shufflePlaylist()
+
 }
 
 favSongs()
@@ -791,73 +789,40 @@ function moveSongToFirst(index) {
 // Example usage
 // Assuming the "more" icon of the second song (index 1) is clicked
 
-
-
 function addMoreButtonListeners() {
     document.querySelectorAll(".more").forEach(e => {
-        e.addEventListener('click', () => {
-            const num = parseInt(e.getAttribute("data-index"));
-            const song = playlist[num];
-            const songIndex = favoriteSongs.indexOf(song);
+        // Remove any existing event listener to avoid duplication
+        e.removeEventListener('click', handleMoreClick);
 
-            if (songIndex !== -1) {
-                // If the song exists in favoriteSongs, remove it
-                favoriteSongs.splice(songIndex, 1);
-                alert(`Removed: ${song.name}`);
-                e.style.color = "white"
-                // console.log(`Removed: ${song.name}`);
-
-
-            } else {
-                // If the song doesn't exist, add it to favoriteSongs
-                favoriteSongs.push(song);
-                e.style.color = "lightseagreen"
-                alert(`Added: ${song.name}`);
-                // console.log(`Added: ${song.name}`);
-                let num = e.getAttribute("data-index");
-
-            }
-
-            generatePlaylist();
-
-            // Re-attach event listeners after DOM update
-            addMoreButtonListeners();
-        });
+        // Add a single event listener
+        e.addEventListener('click', handleMoreClick);
     });
 }
 
-generatePlaylist(); // Initial generation
-addMoreButtonListeners();
-setInterval(()=>{document.querySelectorAll(".more").forEach(e => {
-        e.addEventListener('click', () => {
-            const num = parseInt(e.getAttribute("data-index"));
-            const song = playlist[num];
-            const songIndex = favoriteSongs.indexOf(song);
+function handleMoreClick(event) {
+    const e = event.target;
+    const num = parseInt(e.getAttribute("data-index"));
+    const song = playlist[num];
+    const songIndex = favoriteSongs.indexOf(song);
 
-            if (songIndex !== -1) {
-                // If the song exists in favoriteSongs, remove it
-                favoriteSongs.splice(songIndex, 1);
-                alert(`Removed: ${song.name}`);
-                e.style.color = "white"
-                // console.log(`Removed: ${song.name}`);
+    if (songIndex !== -1) {
+        // If the song exists in favoriteSongs, remove it
+        favoriteSongs.splice(songIndex, 1);
+        alert(`Removed: ${song.name}`);
+        e.style.color = "white"; // Set icon color to white
+    } else {
+        // If the song doesn't exist, add it to favoriteSongs
+        favoriteSongs.push(song);
+        alert(`Added: ${song.name}`);
+        e.style.color = "lightseagreen"; // Set icon color to lightseagreen
+    }
 
+    // Update the playlist UI (optional if you need to refresh the display)
+    generatePlaylist();
 
-            } else {
-                // If the song doesn't exist, add it to favoriteSongs
-                favoriteSongs.push(song);
-                e.style.color = "lightseagreen"
-                alert(`Added: ${song.name}`);
-                // console.log(`Added: ${song.name}`);
-                let num = e.getAttribute("data-index");
+    // Re-attach event listeners to the updated DOM
+    addMoreButtonListeners();
+}
 
-            }
-
-            generatePlaylist();
-
-            // Re-attach event listeners after DOM update
-            addMoreButtonListeners();
-        });
-    });}, 1000)
-
-generatePlaylist(); // Initial generation
+// Call this once during initialization
 addMoreButtonListeners();
