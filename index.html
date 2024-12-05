@@ -28,15 +28,23 @@
         <h2 class="sign">Pranjal &ThickSpace; Tomar</h2>
     </div>
     <main>
+        <img src="" class="bg">
 
         <div class="topbar"> <!-- 10% -->
-            <img class="arr-left" src="Assets/arrow-left.png" alt="">
+            <!-- <img class="arr-left" src="Assets/arrow-left.png" alt=""> -->
             <h3 class="cuname">Playing Sajde</h3>
-            <img class="heart" src="Assets/heart.png" alt="">
+            <h3>AudoSurf &copy;</h3>
+            <!-- <div class="hrt">
+                <img class="heart" src="Assets/heart.png" alt="">
+            </div> -->
         </div>
 
         <div class="album-details">
-            <img id="song-thumbnail" src="" alt="Song Thumbnail">
+            <div class="imgcont">
+
+
+                <img id="song-thumbnail" src="" alt="Song Thumbnail">
+            </div>
             <div>
                 <h4 id="song-name">Sajde</h4>
                 <h5 id="song-artist">KK | Sunidhi</h5>
@@ -45,6 +53,9 @@
 
 
         <div class="progress-bar">
+            <div class="captions">
+                <p> </p>
+            </div>
             <div class="large-bar">
                 <div class="dur-bar"></div>
             </div>
@@ -69,7 +80,12 @@
     <section>
 
     </section>
-    <script src='app.js'> </script>
+
+    <ul class="foot">
+        <li>AudoSurf&copy;</li>
+        <li style='font-family: "Cedarville Cursive", serif;'>Pranjal</li>
+    </ul>
+    <script src='JS/script.js'> </script>
     <script>
         let signature = document.querySelector("h2.sign");
         let txt = signature.innerText;
@@ -93,7 +109,7 @@
             gsap.to("main, section", { visibility: 'visible' })
             document.querySelector(".overlay").style.display = "none"
 
-        }, 2000)
+        }, 0)
 
     </script>
 </body>
