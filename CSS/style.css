@@ -13,7 +13,7 @@ body {
 }
 
 body {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -24,13 +24,25 @@ body {
 main {
     height: 95dvh;
     width: 100%;
+    /* background-image: url("More/Afreen.jpeg"); */
+    background-position: center;
     display: flex;
     flex-direction: column;
     gap: 3vw;
     position: relative;
 }
 
-
+main>.bg {
+    height: 130%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    /* opacity: 0.4; */
+    /* backdrop-filter: blur(120px); */
+    filter: blur(160px);
+}
 
 main>* {
     width: 100%;
@@ -100,7 +112,13 @@ main>* {
 #song-artist {
     font-weight: 300;
     font-size: 10px;
-    color: #8E8E8E;
+    color: #c6c6c6;
+    /* mix-blend-mode: multiply; */
+}
+
+.playlist-heading {
+    position: relative;
+    z-index: 4;
 }
 
 .progress-bar {
@@ -111,6 +129,7 @@ main>* {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 
 .progress-bar .large-bar {
@@ -170,8 +189,8 @@ main>* {
 
 @media screen and (max-width: 450px) {
     .album-details img {
-        height: 90vw;
-        width: 90vw;
+        height: 70vw;
+        width: 70vw;
     }
 
     .topbar {
@@ -203,7 +222,7 @@ main>* {
 
 
 section {
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     color: white;
     padding: 10px 30px;
@@ -224,6 +243,7 @@ section .container #song-name,
 section .container #song-artist {
     position: relative;
     right: 12vw;
+    ;
 }
 
 .hf h1 {
@@ -267,11 +287,12 @@ section .container h1 {
 }
 
 .container .more {
-    position: absolute;
+    /* position: absolute;
     right: 13vw;
-    font-size: 19px;
-/*     color: lightseagreen; */
-    
+    font-size: 19px; */
+    /*     color: lightseagreen; */
+    display: none;
+
 }
 
 
@@ -286,8 +307,8 @@ h1.h {
 }
 
 .tnail {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     object-fit: cover;
     object-position: center;
     position: absolute;
@@ -332,4 +353,51 @@ section {
     font-weight: 400;
     display: inline-block;
     opacity: 1;
+}
+
+.durElem {
+    font-size: 9px;
+    color: #8e8e8e;
+    position: absolute;
+    /* bottom: 0; */
+    right: 7vw;
+}
+
+.foot {
+    border-top: 1px solid rgb(114, 114, 114);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    padding: 10px 70px;
+    position: relative;
+    top: 30px;
+}
+
+.foot li {
+    font-size: 10px;
+}
+
+.captions {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    /* height: 14px; */
+    background-color: rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+    /* height: 8%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: lightblue;
+}
+
+.imgcont {
+    position: relative;
 }
