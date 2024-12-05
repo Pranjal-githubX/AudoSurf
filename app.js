@@ -25,295 +25,73 @@ let isPlaying = false;
 let isShuffle = false;
 let isRepeating = false;
 let isCurrFav = false
-let playlist = [
+
+allSongs = playlist = [
     {
-        name: 'Afreen Afreen',
-        artist: 'Rahat F | Momina M',
-        thumbnail: './More/Afreen.jpeg',
-        audioPath: 'Audio/Afreen.mp3'
-    },
-    {
-        name: 'Bela Ciao',
-        artist: 'Money Heist Crew',
-        thumbnail: './More/one last time.jpg',
-        audioPath: 'Audio/Bela Ciao.mp3'
-    }, {
-        name: 'Fix You',
-        artist: 'Coldplay',
-        thumbnail: './More/Fix You.webp',
-        audioPath: 'Audio/Fix You.mp3'
-    }, {
-        name: 'Beetein Lamhein',
-        artist: 'KK | Mithoon | Sayeed Quadri',
-        thumbnail: './More/BL.jpeg',
-        audioPath: 'Audio/beetein.mp3'
-    }, {
-        name: 'Dil Ibadat',
-        artist: 'KK | Pritam',
-        thumbnail: './More/DI.jpg',
-        audioPath: 'Audio/DI.mp3'
-    }, {
-        name: 'Haan Tu Hain',
-        artist: 'Pritam | KK',
-        thumbnail: './More/KK.jpg',
-        audioPath: 'Audio/HTH.mp3'
-    }, {
-        name: 'I AM IN LOVE',
-        artist: 'Pritam | KK | Dominique | Nilesh Mishra',
-        thumbnail: './More/Mumbai.jpeg',
-        audioPath: 'Audio/IAIL.mp3'
-    }, {
         name: 'Khuda Jaane',
         artist: 'Vishal-Shekhar | KK | Shipa Rao',
         thumbnail: './More/Bachna ae hasino.jpg',
         audioPath: 'Audio/KJ.mp3'
-    }, {
-        name: 'Kal ki hi Baat Hain',
-        artist: 'Pritam | KK',
-        thumbnail: './More/Chichhore.jpg',
-        audioPath: 'Audio/KKHBH.mp3'
-    }, {
+    }, 
+    {
         name: 'Kya Mujhe Pyar Hain',
         artist: 'Pritam | KK',
         thumbnail: './More/KK.jpg',
         audioPath: 'Audio/KMPH.mp3'
+    }, 
+    {
+        name: 'Pee Loon',
+        artist: 'Pritam Irshad Kamil | Mohit Chauhan',
+        thumbnail: './More/Mumbai.jpeg',
+        audioPath: 'Audio/PL.mp3'
+    },
+    {
+        name: 'Dil Ibadat',
+        artist: 'KK | Pritam',
+        thumbnail: './More/DI.jpg',
+        audioPath: 'Audio/DI.mp3'
+    }
+    , {
+        name: 'I AM IN LOVE',
+        artist: 'Pritam | KK | Dominique | Nilesh Mishra',
+        thumbnail: './More/Mumbai.jpeg',
+        audioPath: 'Audio/IAIL.mp3'
     }, {
         name: 'O Meri Laila',
         artist: 'Joi Barua | Atif Aslam | Jyoti Tangri',
         thumbnail: './More/laila majnu.jpg',
         audioPath: 'Audio/laila.mp3'
     }, {
-        name: 'Labon Ko',
-        artist: 'Pritam | KK',
-        thumbnail: './More/Labon Ko.jpeg',
-        audioPath: 'Audio/LK.mp3'
-    }, {
-        name: 'O Sanam',
-        artist: 'Lucky Ali | Syed Aslam Noor',
-        thumbnail: './More/o sanam.jpeg',
-        audioPath: 'Audio/o sanam.mp3'
-    }, {
-        name: 'O Meri Jaan',
-        artist: 'KK',
-        thumbnail: './More/KK.jpg',
-        audioPath: 'Audio/omj.mp3'
-    }, {
-        name: 'Parda Parda',
-        artist: 'Pritam | Sunidhi Chauhan | Rana Mazumder',
-        thumbnail: './More/Mumbai.jpeg',
-        audioPath: 'Audio/parda.mp3'
-    }, {
-        name: 'Pee Loon',
-        artist: 'Pritam Irshad Kamil | Mohit Chauhan',
-        thumbnail: './More/Mumbai.jpeg',
-        audioPath: 'Audio/PL.mp3'
-    }, {
         name: 'Sajde Kiye Hain Lakho',
         artist: 'Pritam | KK | Sunidhi Chauhan',
         thumbnail: './More/S.png',
         audioPath: 'Audio/S.mp3'
-    }, {
-        name: 'Tu Hi Meri Shab Hain',
-        artist: 'Pritam | KK | Sayeed Quadri',
-        thumbnail: './More/KK.jpg',
-        audioPath: 'Audio/THMSH.mp3'
     }, {
         name: 'Tum Jo Aye',
         artist: 'Pritam | Rahat Fateh Ali Khan | Tulsi Kumar',
         thumbnail: './More/Mumbai.jpeg',
         audioPath: 'Audio/TJA.mp3'
     }, {
-        name: 'Tu Jo Mila',
-        artist: 'Pritam | KK',
-        thumbnail: './More/TJM.jpeg',
-        audioPath: 'Audio/TJM.mp3'
-    }, {
-        name: 'Tujhe Sochta Hoon',
-        artist: 'Pritam | KK ',
-        thumbnail: './More/TSH.jpeg',
-        audioPath: 'Audio/TSH.mp3'
-    }, {
-        name: 'Zindagi Do Pal Ki',
-        artist: 'Rajesh Roshan | Hrithik Roshan',
-        thumbnail: './More/Woh Lamhe.jpeg',
-        audioPath: 'Audio/ZDPK.mp3'
-    }, {
         name: 'Zara Sa',
         artist: 'Pritam | KK',
         thumbnail: './More/Zara sa.jpeg',
         audioPath: 'Audio/ZS.mp3'
-    }, {
-        name: 'O Meri Jaan',
-        artist: 'Pritam | KK',
-        thumbnail: './More/DI.jpg',
-        audioPath: 'Audio/Tum Mile OMJ.mp3'
-    }, {
-        name: 'Aankhon Mein Teri',
-        artist: 'Pritam | KK',
-        thumbnail: './More/KK.jpg',
-        audioPath: 'Audio/AMT.mp3'
-    }, {
-        name: 'Dil Kyun Yeh Mera',
-        artist: 'Pritam | KK',
-        thumbnail: './More/KK.jpg',
-        audioPath: 'Audio/DK.mp3'
-    }, {
-        name: 'KK Mashup',
-        artist: 'Pritam | KK',
-        thumbnail: './More/KK.jpg',
-        audioPath: 'Audio/KK M.mp3'
     }, {
         name: 'Soniye (Heartless)',
         artist: 'Pritam | KK',
         thumbnail: './More/KK.jpg',
         audioPath: 'Audio/soniye.mp3'
     }, {
-        name: 'Yeh Tune Kya Kiya',
-        artist: 'Javed B | Rajat Arora',
-        thumbnail: './More/YTKK.jpeg',
-        audioPath: 'Audio/YTKK.mp3'
-    }, {
-        name: 'Ve Kamleya',
-        artist: 'Pritam | Arijit Singh | Shreya Ghoshal | Amitabh B | ',
-        thumbnail: './More/VK.jpeg',
-        audioPath: 'Audio/VK.mp3'
-    }, {
-        name: 'Apna Bana Le',
-        artist: 'Sachin-Jigar | Arijit S | Amitabh B',
-        thumbnail: './More/ABL.jpeg',
-        audioPath: 'Audio/APL.mp3'
-    }, {
         name: 'Mere Yaara',
         artist: 'Arijit S | Neeti M | Rashmi V',
         thumbnail: './More/MY.jpeg',
         audioPath: 'Audio/MY.mp3'
-    }, {
-        name: 'Tere Sang Yaara',
-        artist: 'Atif Aslam | Manoj M',
-        thumbnail: './More/TSY.jpeg',
-        audioPath: 'Audio/TSY.mp3'
-    }, {
-        name: 'Pehli Nazar Mein',
-        artist: 'Pritam | Atif Aslam',
-        thumbnail: './More/PNM.jpeg',
-        audioPath: 'Audio/PNM.mp3'
     }
 ];
 
 
-// let favoriteSongs = [
-//     {
-//         "name": "I AM IN LOVE",
-//         "artist": "Pritam | KK | Dominique | Nilesh Mishra",
-//         "thumbnail": "./More/Mumbai.jpeg",
-//         "audioPath": "Audio/IAIL.mp3"
-//     },
-//     {
-//         "name": "Haan Tu Hain",
-//         "artist": "Pritam | KK",
-//         "thumbnail": "./More/KK.jpg",
-//         "audioPath": "Audio/HTH.mp3"
-//     },
+playlist = allSongs
 
-//     {
-//         "name": "Labon Ko",
-//         "artist": "Pritam | KK",
-//         "thumbnail": "./More/Labon Ko.jpeg",
-//         "audioPath": "Audio/LK.mp3"
-//     },
-//     {
-//         "name": "Soniye (Heartless)",
-//         "artist": "Pritam | KK",
-//         "thumbnail": "./More/KK.jpg",
-//         "audioPath": "Audio/soniye.mp3"
-//     },
-
-//     {
-//         "name": "Khuda Jaane",
-//         "artist": "Vishal-Shekhar | KK | Shipa Rao",
-//         "thumbnail": "./More/Bachna ae hasino.jpg",
-//         "audioPath": "Audio/KJ.mp3"
-//     },
-//     {
-//         "name": "Kya Mujhe Pyar Hain",
-//         "artist": "Pritam | KK",
-//         "thumbnail": "./More/KK.jpg",
-//         "audioPath": "Audio/KMPH.mp3"
-//     }, {
-//         "name": "Yeh Tune Kya Kiya",
-//         "artist": "Javed B | Rajat Arora",
-//         "thumbnail": "./More/YTKK.jpeg",
-//         "audioPath": "Audio/YTKK.mp3"
-//     },
-//     {
-//         "name": "Mere Yaara",
-//         "artist": "Arijit S | Neeti M | Rashmi V",
-//         "thumbnail": "./More/MY.jpeg",
-//         "audioPath": "Audio/MY.mp3"
-//     },
-//     {
-//         "name": "O Meri Jaan",
-//         "artist": "Pritam | KK",
-//         "thumbnail": "./More/DI.jpg",
-//         "audioPath": "Audio/Tum Mile OMJ.mp3"
-//     },
-//     {
-//         "name": "Apna Bana Le",
-//         "artist": "Sachin-Jigar | Arijit S | Amitabh B",
-//         "thumbnail": "./More/ABL.jpeg",
-//         "audioPath": "Audio/APL.mp3"
-//     },
-//     {
-//         "name": "Afreen Afreen",
-//         "artist": "Rahat F | Momina M",
-//         "thumbnail": "./More/Afreen.jpeg",
-//         "audioPath": "Audio/Afreen.mp3"
-//     },
-//     {
-//         "name": "Zara Sa",
-//         "artist": "Pritam | KK",
-//         "thumbnail": "./More/Zara sa.jpeg",
-//         "audioPath": "Audio/ZS.mp3"
-//     }, {
-//         "name": "Tum Jo Aye",
-//         "artist": "Pritam | Rahat Fateh Ali Khan | Tulsi Kumar",
-//         "thumbnail": "./More/Mumbai.jpeg",
-//         "audioPath": "Audio/TJA.mp3"
-//     }, {
-//         "name": "Parda Parda",
-//         "artist": "Pritam | Sunidhi Chauhan | Rana Mazumder",
-//         "thumbnail": "./More/Mumbai.jpeg",
-//         "audioPath": "Audio/parda.mp3"
-//     }, {
-//         "name": "Pee Loon",
-//         "artist": "Pritam Irshad Kamil | Mohit Chauhan",
-//         "thumbnail": "./More/Mumbai.jpeg",
-//         "audioPath": "Audio/PL.mp3"
-//     }, {
-//         "name": "Tu Hi Meri Shab Hain",
-//         "artist": "Pritam | KK | Sayeed Quadri",
-//         "thumbnail": "./More/KK.jpg",
-//         "audioPath": "Audio/THMSH.mp3"
-//     },
-
-//     {
-//         "name": "Sajde Kiye Hain Lakho",
-//         "artist": "Pritam | KK | Sunidhi Chauhan",
-//         "thumbnail": "./More/S.png",
-//         "audioPath": "Audio/S.mp3"
-//     },
-//     {
-//         "name": "Dil Ibadat",
-//         "artist": "KK | Pritam",
-//         "thumbnail": "./More/DI.jpg",
-//         "audioPath": "Audio/DI.mp3"
-//     }, {
-//         "name": "O Meri Laila",
-//         "artist": "Joi Barua | Atif Aslam | Jyoti Tangri",
-//         "thumbnail": "./More/laila majnu.jpg",
-//         "audioPath": "Audio/laila.mp3"
-//     },
-// ]
 
 
 let favoriteSongs = []
@@ -334,180 +112,7 @@ function favSongs() {
             generatePlaylist()
         }
         else if (isCurrFav) {
-            playlist = [
-                {
-                    name: 'Afreen Afreen',
-                    artist: 'Rahat F | Momina M',
-                    thumbnail: './More/Afreen.jpeg',
-                    audioPath: 'Audio/Afreen.mp3'
-                },
-                {
-                    name: 'Bela Ciao',
-                    artist: 'Money Heist Crew',
-                    thumbnail: './More/one last time.jpg',
-                    audioPath: 'Audio/Bela Ciao.mp3'
-                }, {
-                    name: 'Fix You',
-                    artist: 'Coldplay',
-                    thumbnail: './More/Fix You.webp',
-                    audioPath: 'Audio/Fix You.mp3'
-                }, {
-                    name: 'Beetein Lamhein',
-                    artist: 'KK | Mithoon | Sayeed Quadri',
-                    thumbnail: './More/BL.jpeg',
-                    audioPath: 'Audio/beetein.mp3'
-                }, {
-                    name: 'Dil Ibadat',
-                    artist: 'KK | Pritam',
-                    thumbnail: './More/DI.jpg',
-                    audioPath: 'Audio/DI.mp3'
-                }, {
-                    name: 'Haan Tu Hain',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/KK.jpg',
-                    audioPath: 'Audio/HTH.mp3'
-                }, {
-                    name: 'I AM IN LOVE',
-                    artist: 'Pritam | KK | Dominique | Nilesh Mishra',
-                    thumbnail: './More/Mumbai.jpeg',
-                    audioPath: 'Audio/IAIL.mp3'
-                }, {
-                    name: 'Khuda Jaane',
-                    artist: 'Vishal-Shekhar | KK | Shipa Rao',
-                    thumbnail: './More/Bachna ae hasino.jpg',
-                    audioPath: 'Audio/KJ.mp3'
-                }, {
-                    name: 'Kal ki hi Baat Hain',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/Chichhore.jpg',
-                    audioPath: 'Audio/KKHBH.mp3'
-                }, {
-                    name: 'Kya Mujhe Pyar Hain',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/KK.jpg',
-                    audioPath: 'Audio/KMPH.mp3'
-                }, {
-                    name: 'O Meri Laila',
-                    artist: 'Joi Barua | Atif Aslam | Jyoti Tangri',
-                    thumbnail: './More/laila majnu.jpg',
-                    audioPath: 'Audio/laila.mp3'
-                }, {
-                    name: 'Labon Ko',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/Labon Ko.jpeg',
-                    audioPath: 'Audio/LK.mp3'
-                }, {
-                    name: 'O Sanam',
-                    artist: 'Lucky Ali | Syed Aslam Noor',
-                    thumbnail: './More/o sanam.jpeg',
-                    audioPath: 'Audio/o sanam.mp3'
-                }, {
-                    name: 'O Meri Jaan',
-                    artist: 'KK',
-                    thumbnail: './More/KK.jpg',
-                    audioPath: 'Audio/omj.mp3'
-                }, {
-                    name: 'Parda Parda',
-                    artist: 'Pritam | Sunidhi Chauhan | Rana Mazumder',
-                    thumbnail: './More/Mumbai.jpeg',
-                    audioPath: 'Audio/parda.mp3'
-                }, {
-                    name: 'Pee Loon',
-                    artist: 'Pritam Irshad Kamil | Mohit Chauhan',
-                    thumbnail: './More/Mumbai.jpeg',
-                    audioPath: 'Audio/PL.mp3'
-                }, {
-                    name: 'Sajde Kiye Hain Lakho',
-                    artist: 'Pritam | KK | Sunidhi Chauhan',
-                    thumbnail: './More/S.png',
-                    audioPath: 'Audio/S.mp3'
-                }, {
-                    name: 'Tu Hi Meri Shab Hain',
-                    artist: 'Pritam | KK | Sayeed Quadri',
-                    thumbnail: './More/KK.jpg',
-                    audioPath: 'Audio/THMSH.mp3'
-                }, {
-                    name: 'Tum Jo Aye',
-                    artist: 'Pritam | Rahat Fateh Ali Khan | Tulsi Kumar',
-                    thumbnail: './More/Mumbai.jpeg',
-                    audioPath: 'Audio/TJA.mp3'
-                }, {
-                    name: 'Tu Jo Mila',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/TJM.jpeg',
-                    audioPath: 'Audio/TJM.mp3'
-                }, {
-                    name: 'Tujhe Sochta Hoon',
-                    artist: 'Pritam | KK ',
-                    thumbnail: './More/TSH.jpeg',
-                    audioPath: 'Audio/TSH.mp3'
-                }, {
-                    name: 'Zindagi Do Pal Ki',
-                    artist: 'Rajesh Roshan | Hrithik Roshan',
-                    thumbnail: './More/Woh Lamhe.jpeg',
-                    audioPath: 'Audio/ZDPK.mp3'
-                }, {
-                    name: 'Zara Sa',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/Zara sa.jpeg',
-                    audioPath: 'Audio/ZS.mp3'
-                }, {
-                    name: 'O Meri Jaan',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/DI.jpg',
-                    audioPath: 'Audio/Tum Mile OMJ.mp3'
-                }, {
-                    name: 'Aankhon Mein Teri',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/KK.jpg',
-                    audioPath: 'Audio/AMT.mp3'
-                }, {
-                    name: 'Dil Kyun Yeh Mera',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/KK.jpg',
-                    audioPath: 'Audio/DK.mp3'
-                }, {
-                    name: 'KK Mashup',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/KK.jpg',
-                    audioPath: 'Audio/KK M.mp3'
-                }, {
-                    name: 'Soniye (Heartless)',
-                    artist: 'Pritam | KK',
-                    thumbnail: './More/KK.jpg',
-                    audioPath: 'Audio/soniye.mp3'
-                }, {
-                    name: 'Yeh Tune Kya Kiya',
-                    artist: 'Javed B | Rajat Arora',
-                    thumbnail: './More/YTKK.jpeg',
-                    audioPath: 'Audio/YTKK.mp3'
-                }, {
-                    name: 'Ve Kamleya',
-                    artist: 'Pritam | Arijit Singh | Shreya Ghoshal | Amitabh B | ',
-                    thumbnail: './More/VK.jpeg',
-                    audioPath: 'Audio/VK.mp3'
-                }, {
-                    name: 'Apna Bana Le',
-                    artist: 'Sachin-Jigar | Arijit S | Amitabh B',
-                    thumbnail: './More/ABL.jpeg',
-                    audioPath: 'Audio/APL.mp3'
-                }, {
-                    name: 'Mere Yaara',
-                    artist: 'Arijit S | Neeti M | Rashmi V',
-                    thumbnail: './More/MY.jpeg',
-                    audioPath: 'Audio/MY.mp3'
-                }, {
-                    name: 'Tere Sang Yaara',
-                    artist: 'Atif Aslam | Manoj M',
-                    thumbnail: './More/TSY.jpeg',
-                    audioPath: 'Audio/TSY.mp3'
-                }, {
-                    name: 'Pehli Nazar Mein',
-                    artist: 'Pritam | Atif Aslam',
-                    thumbnail: './More/PNM.jpeg',
-                    audioPath: 'Audio/PNM.mp3'
-                }
-            ];
+            playlist = allSongs
 
             isCurrFav = !isCurrFav
             generatePlaylist()
@@ -617,6 +222,14 @@ function loadSong(index) {
     songArtistElement.textContent = song.artist;
     songThumbnailElement.src = song.thumbnail;
 
+
+    // document.querySelectorAll("i.ri-play-circle-line").forEach(e => {
+    //     e.addEventListener("click", () => {
+    //         songThumbnailElement.src
+    //     })
+    // })
+    document.querySelector("main > img.bg").src = song.thumbnail
+
     // Update the "cuname" div with the current song name
     currentSongNameDiv.textContent = `Now Playing: ${song.name}`;
 
@@ -672,6 +285,7 @@ if ('serviceWorker' in navigator) {
 function generatePlaylist() {
     document.querySelector("section").innerHTML = ""
     let y = document.createElement("h1")
+    y.classList.add("playlist-heading")
     y.style.fontSize = "20px"
     y.innerText = "Playlist: "
     document.querySelector("section").append(y)
@@ -690,7 +304,19 @@ function generatePlaylist() {
         img.src = playlist[i].thumbnail
         img.classList.add("tnail")
         container.append(img)
+        const durElem = document.createElement("p")
+        const audioElement = new Audio(playlist[i].audioPath);
+        audioElement.addEventListener("loadedmetadata", () => {
+            var totalSeconds = Math.floor(audioElement.duration);
+            var minutes = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+            var seconds = (totalSeconds % 60).toString().padStart(2, '0');
+            // console.log(`Song: ${playlist[i].name}, Duration: ${minutes}:${seconds}`);
+            durElem.innerText = `${minutes}:${seconds}`
+            durElem.classList.add("durElem")
+            container.appendChild(durElem)
 
+            console.log(durElem);
+        });
         const lft = document.createElement("div");
         lft.classList.add("lft");
 
@@ -741,7 +367,7 @@ function generatePlaylist() {
             // Get the index and selected song
             const index = icon.getAttribute("data-index"); // Get the index from the data attribute
             const selectedSong = playlist[index]; // Retrieve the song object from the playlist
-
+            loadSong(index)
             audio.pause(); // Pause current audio if playing
             audio.src = selectedSong.audioPath; // Update audio source to the selected song
             audio.play(); // Play the new song
@@ -824,5 +450,132 @@ function handleMoreClick(event) {
     addMoreButtonListeners();
 }
 
-// Call this once during initialization
-addMoreButtonListeners();
+
+const captions = {
+    "DI.mp3": [
+        { time: 13.6, text: "DIL Ibadat Kar Raha Hain" },
+        { time: 16.6, text: "Dhadkane Meri Sunn" },
+        { time: 19.2, text: "Tujhko Main Kar Loon Haasil" },
+        { time: 21.4, text: "Lagi Hain Yahi Dhunn" },
+        { time: 26.4, text: "Zindagi Ki Shaakh Se Loon" },
+        { time: 29.6, text: "Kuch Haseen Pal Main Chun" },
+        { time: 32, text: "TujhKo Main Kar Loon Haasil" },
+        { time: 34.26, text: "Lagi Hain Yahi Dhunn" },
+
+        { time: 39.24, text: "Seyo Leyo Sama Leyo Seyo Leyo Haa" },
+        { time: 51.4, text: "Oh Yeah" },
+
+        { time: 52, text: "DIL Ibadat Kar Raha Hain" },
+        { time: 55.2, text: "Dhadkane Meri Sunn" },
+        { time: 57., text: "Tujhko Main Kar Loon Haasil" },
+        { time: 59.8, text: "Lagi Hain Yahi Dhun" },
+        { time: 64.8, text: "Zindagi Ki Shaakh Se Loon" },
+        { time: 68, text: "Kuch Haseen Pal Main Chun" },
+        { time: 70.4, text: "TujhKo Main Kar Loon Haasil" },
+        { time: 72.37, text: "Lagi Hain Yahi Dhunn" },
+
+
+        { time: 77.2, text: "Jo Bhi Jitne Pal Jiyu" },
+        { time: 80.5, text: "Unhe Tere Sang Jiyu" },
+        { time: 83.72, text: "Jo Bhi Kal Ho Ab Mera" },
+        { time: 86.8, text: "Use Tere Sang Jiyu" },
+        { time: 90.1, text: "Jo Bhi Sansein Main Bharu" },
+        { time: 93.3, text: "Unhe Tere Sang Bharu" },
+        { time: 96.5, text: "Chaahe Jo Ho Raasta" },
+        { time: 99.7, text: "Use Tere Sang Chalu" },
+        { time: 103.3, text: "DIL Ibadat Kar Raha Hain" },
+        { time: 106.5, text: "Dhadkane Meri Sunn" },
+        { time: 108.8, text: "Tujhko Main Kar loon Haasil" },
+        { time: 111.24, text: "Lagi Hain Yahi Dhunn" },
+        { time: 115, text: "Na Na Na Na Na Na Na Na Na Na Na " },
+        { time: 119.31, text: "Na Na Na Na Na" },
+        { time: 121.31, text: "Na Na Na Na Na Na Na Na Na Na Na" },
+        { time: 125.31, text: "Na Na Na Na Na" },
+        { time: 127.31, text: "~~~🎵 🎶~~~" },
+        { time: 154.3, text: "Mujhko De Tuu Mitt Jaane" },
+        { time: 158, text: "Ab Khud Se Dil Mil Jaane" },
+        { time: 161.15, text: "Kyun Hain Yeh Itna Faasla" },
+        { time: 167.2, text: "Lamhein Yeh Fir Na Aane" },
+        { time: 170.8, text: "Inko Tu Na De Jaane" },
+        { time: 173.9, text: "Tu Mujh Pe Khud Ko De Luta" },
+        { time: 179.6, text: "Tujhe Tujhse Todh Loon" },
+        { time: 182.9, text: "Kahin Khud Se Jodh Loon" },
+        { time: 186, text: "Mere Jismo-Jaan Pe Aaa" },
+        { time: 189.26, text: "Teri Khushbu Odh Loon" },
+        { time: 192.4, text: "Jo Bhi Sansein Main Bharu" },
+        { time: 195.76, text: "Unhe Tere Sang Bharu" },
+        { time: 198.92, text: "Chaahe Jo Ho Raasta" },
+        { time: 202.1, text: "Use Tere Sang Chalu" },
+        { time: 205.6, text: "Dil Ibadat Kar Raha Hain" },
+        { time: 208.9, text: "Dhadhkane Meri Sunn" },
+        { time: 211.3, text: "Tujhko Main Kar loon Haasil" },
+        { time: 213.5, text: "Lagi Hain Yahi Dhunn" },
+        { time: 219, text: "Aaaaaa" },
+
+        { time: 244.1, text: "Baahon Mein De Bas Jaane" },
+        { time: 247.7, text: "Seenein Mein De Chup Jaane" },
+        { time: 250.7, text: "Tujh Bin Main Jauu To Kahaa" },
+
+        { time: 257, text: "Tujhse Hain Mujhko Paane" },
+        { time: 260.4, text: "Yaadon Ke Voh Nazraane" },
+        { time: 263.8, text: "Ik Jinpe Hak Ho Bas Mera" },
+        { time: 269.3, text: "Teri Yaadon Mein Rahun" },
+        { time: 272.4, text: "Tere Khwabon Mein Jagoon" },
+        { time: 275.7, text: "Mujhe Dhoonde Jab Koi" },
+        { time: 278.9, text: "Teri Ankhon Mein Milu" },
+
+        { time: 282.2, text: "Jo Bhi Saansein Main Bharu" },
+        { time: 285.39, text: "Unhe Tere Sang Bharu" },
+        { time: 288.4, text: "Chaahe Jo Ho Raasta" },
+        { time: 291.7, text: "Use Tere Sang Chalu" },
+
+        { time: 295.4, text: "Dil Ibadat Kar Raha Hain" },
+        { time: 298.55, text: "Dhadkane Meri Sunn" },
+        { time: 301, text: "Tujhko Main Kar Loon Haasil" },
+        { time: 303.2, text: "Lagi Hain Yahi Dhun" },
+        { time: 308, text: "Lyrics by Sayeed Quadri" },
+
+    ],
+};
+
+const captionsDiv = document.querySelector(".captions")
+// Get audio element and captions div
+function updateCaptions() {
+    const currentSong = audio.getAttribute("src").split("/").pop(); // Get current song file name
+    const currentTime = audio.currentTime; // Get current play time of song
+
+    if (captions[currentSong]) {
+        // Find the caption that matches the current time
+        const currentCaption = captions[currentSong].find(
+            (caption, index, array) => {
+                const nextCaptionTime = array[index + 1]?.time || Infinity; // Get the next caption's start time or Infinity
+                return currentTime >= caption.time && currentTime < nextCaptionTime; // Caption is valid until the next one starts
+            }
+        );
+
+        // Update the captions div with the current caption or clear it if none found
+        captionsDiv.textContent = currentCaption ? currentCaption.text : "";
+    } else {
+        captionsDiv.textContent = "No captions available"; // Default message for songs without captions
+    }
+}
+
+// Attach the function to the `timeupdate` event of the audio element
+audio.addEventListener("timeupdate", updateCaptions);
+
+audio.play()
+
+let d = 'play'
+document.querySelector("body").addEventListener("keyup", (e) => {
+    // if (e.key === "d") {
+    if (d === "play") {
+        audio.pause()
+        console.log((audio.currentTime).toFixed(2));
+        d = "pause"
+    }
+    else if (d === "pause") {
+        audio.play()
+        d = "play"
+    }
+    // }
+})
