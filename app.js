@@ -415,14 +415,16 @@ function moveSongToFirst(index) {
 // Example usage
 // Assuming the "more" icon of the second song (index 1) is clicked
 
-function addMoreButtonListeners() {
-    document.querySelectorAll(".more").forEach(e => {
-        // Remove any existing event listener to avoid duplication
-        e.removeEventListener('click', handleMoreClick);
+document.querySelector("section").addEventListener("click", (e) => {
+    // Check if the clicked element has the 'more' class
+    if (e.target.classList.contains("more")) {
+        handleMoreClick(e); // Call the handler function
+    }
+});
 
-        // Add a single event listener
-        e.addEventListener('click', handleMoreClick);
-    });
+// Handler function
+function handleMoreClick(e) {
+    console.log("More button clicked:", e.target.textContent);
 }
 
 function handleMoreClick(event) {
