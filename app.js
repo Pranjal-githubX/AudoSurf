@@ -165,7 +165,7 @@ let playlist = [
                 }, {
                     name: 'Soniye (Heartless)',
                     artist: 'Pritam | KK',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/KK3.jpg',
                     audioPath: 'Audio/soniye.mp3'
                 }, {
                     name: 'Yeh Tune Kya Kiya',
@@ -210,17 +210,17 @@ let playlist = [
                 }, {
                     name: 'Mat Azma Re',
                     artist: 'Pritam | KK | Sayeed Quadri',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/KK2.jpg',
                     audioPath: 'Audio/MAR.mp3'
                 }, {
                     name: 'Tum Mile',
                     artist: 'Pritam | Javed Ali | Kumaar',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/DI.jpg',
                     audioPath: 'Audio/TM.mp3'
                 }, {
                     name: 'Tu Mujhe Soch Kabhi',
                     artist: 'KK',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/KK3.jpg',
                     audioPath: 'Audio/TMSK.mp3'
                 }, {
                     name: 'Tu Hi Haqeeqat',
@@ -346,7 +346,7 @@ function favSongs() {
                 }, {
                     name: 'Tu Hi Meri Shab Hain',
                     artist: 'Pritam | KK | Sayeed Quadri',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/KK1.jpg',
                     audioPath: 'Audio/THMSH.mp3'
                 }, {
                     name: 'Tum Jo Aye',
@@ -436,7 +436,7 @@ function favSongs() {
                 }, {
                     name: 'Hale Dil',
                     artist: 'Pritam | Harshit S | Sayeed Quadri',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/Pritam.jpg',
                     audioPath: 'Audio/HD.mp3'
                 }, {
                     name: 'Mat Azma Re',
@@ -456,14 +456,24 @@ function favSongs() {
                 }, {
                     name: 'Tu Hi Haqeeqat',
                     artist: 'Pritam | Javed Ali | Sayeed Quadri',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/DI.jpg',
                     audioPath: 'Audio/Tu Hi Haqeeqat.mp3'
                 }, {
                     name: 'Tum Se Hi',
                     artist: 'Pritam | Mohit Chauhan | Irshad Kamil',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/JWM.webp',
                     audioPath: 'Audio/tum se hi.mp3'
-                }
+                },{
+                    name: 'Ishq Sufiyana',
+                    artist: 'Pritam | Kamal Khan | Rajat Arora',
+                    thumbnail: './More/Pritam.jpg',
+                    audioPath: 'Audio/IS male.mp3'
+                },{
+                    name: 'Ishq Sufiyana Female',
+                    artist: 'Pritam | Sunidhi Chauhan | Rajat Arora',
+                    thumbnail: './More/Sunidhi.avif',
+                    audioPath: 'Audio/IS male.mp3'
+                },
             
             ];
 
