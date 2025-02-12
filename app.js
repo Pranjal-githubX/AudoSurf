@@ -193,11 +193,6 @@ let playlist = [
                     thumbnail: './More/TSY.jpeg',
                     audioPath: 'Audio/TSY.mp3'
                 }, {
-                    name: 'Pehli Nazar Mein',
-                    artist: 'Pritam | Atif Aslam',
-                    thumbnail: './More/PNM.jpeg',
-                    audioPath: 'Audio/PNM.mp3'
-                }, {
                     name: 'Alvida',
                     artist: 'Pritam | KK',
                     thumbnail: './More/KK.jpg',
@@ -205,35 +200,44 @@ let playlist = [
                 }, {
                     name: 'Hale Dil',
                     artist: 'Pritam | Harshit S | Sayeed Quadri',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/Pritam.jpg',
                     audioPath: 'Audio/HD.mp3'
                 }, {
                     name: 'Mat Azma Re',
                     artist: 'Pritam | KK | Sayeed Quadri',
-                    thumbnail: './More/KK2.jpg',
+                    thumbnail: './More/KK.jpg',
                     audioPath: 'Audio/MAR.mp3'
                 }, {
                     name: 'Tum Mile',
                     artist: 'Pritam | Javed Ali | Kumaar',
-                    thumbnail: './More/DI.jpg',
+                    thumbnail: './More/KK.jpg',
                     audioPath: 'Audio/TM.mp3'
                 }, {
                     name: 'Tu Mujhe Soch Kabhi',
                     artist: 'KK',
-                    thumbnail: './More/KK3.jpg',
+                    thumbnail: './More/KK.jpg',
                     audioPath: 'Audio/TMSK.mp3'
                 }, {
                     name: 'Tu Hi Haqeeqat',
                     artist: 'Pritam | Javed Ali | Sayeed Quadri',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/DI.jpg',
                     audioPath: 'Audio/Tu Hi Haqeeqat.mp3'
                 }, {
                     name: 'Tum Se Hi',
                     artist: 'Pritam | Mohit Chauhan | Irshad Kamil',
-                    thumbnail: './More/KK.jpg',
+                    thumbnail: './More/JWM.webp',
                     audioPath: 'Audio/tum se hi.mp3'
-                }
-            
+                },{
+                    name: 'Ishq Sufiyana',
+                    artist: 'Pritam | Kamal Khan | Rajat Arora',
+                    thumbnail: './More/Pritam.jpg',
+                    audioPath: 'Audio/IS male.mp3'
+                },{
+                    name: 'Ishq Sufiyana Female',
+                    artist: 'Pritam | Sunidhi Chauhan | Rajat Arora',
+                    thumbnail: './More/Sunidhi.avif',
+                    audioPath: 'Audio/IS male.mp3'
+                },
             ];
 
 
